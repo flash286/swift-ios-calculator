@@ -12,8 +12,9 @@ class CalculatorBrain {
     
     private enum Op {
         case Operand(Double)
-        case UnaryOperand(String, Double -> Double)
-        case BinaryOperand(String, (Double, Double) -> Double)
+        case UnaryOperand(description: String, Double -> Double)
+        case Constant(description: String, () -> Double)
+        case BinaryOperand(description: String, (Double, Double) -> Double)
 
     }
     
@@ -22,15 +23,23 @@ class CalculatorBrain {
     private var knowOps = [String:Op]()
     
     init() {
-        knowOps["×"] = Op.BinaryOperand("×", *)
-        knowOps["÷"] = Op.BinaryOperand("÷") {$1 / $0}
-        knowOps["+"] = Op.BinaryOperand("+", +)
-        knowOps["−"] = Op.BinaryOperand("−") {$1 - $0}
-        knowOps["√"] = Op.UnaryOperand("√", sqrt)
+        knowOps["×"] = Op.BinaryOperand(description: "×", *)
+        knowOps["÷"] = Op.BinaryOperand(description: "÷") {$1 / $0}
+        knowOps["+"] = Op.BinaryOperand(description: "+", +)
+        knowOps["−"] = Op.BinaryOperand(description: "−") {$1 - $0}
+        knowOps["√"] = Op.UnaryOperand(description: "√", sqrt)
+        knowOps["SIN"] = Op.UnaryOperand(description: "√", sin)
+        knowOps["COS"] = Op.UnaryOperand(description: "√", cos)
+        knowOps["π"] = Op.Constant(description: "π", { M_PI } )
+    }
+    
+    func flushStack() {
+        opStack.removeAll(keepCapacity: true)
     }
     
     func pushOperand(operand: Double) -> Double? {
         opStack.append(Op.Operand(operand))
+        println("\(opStack)")
         return evaluate()
     }
     
@@ -55,6 +64,8 @@ class CalculatorBrain {
                         return (operation(operand1, operand2), op2Evaluation.remaingOps)
                     }
                 }
+            case .Constant(_, let operation):
+                return (operation(), remaingOps)
             }
         }
         

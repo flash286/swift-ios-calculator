@@ -39,6 +39,11 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func clearDisplay() {
+        displayValue = 0
+        brain.flushStack()
+    }
+    
     @IBAction func performCalculate() {
         userIsInTheMiddleOfTypingANumber = false;
         if let result = brain.pushOperand(displayValue) {
@@ -53,6 +58,7 @@ class ViewController: UIViewController {
             return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
         }
         set {
+            var newValue = NSNumberFormatter.localizedStringFromNumber(NSNumber(double: newValue), numberStyle: NSNumberFormatterStyle.DecimalStyle)
             display.text = "\(newValue)"
         }
     }
