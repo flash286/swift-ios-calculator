@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
 
     @IBOutlet weak var display: UILabel!
     
@@ -46,32 +46,32 @@ class ViewController: UIViewController {
     
     @IBAction func performCalculate() {
         userIsInTheMiddleOfTypingANumber = false;
-        if let result = brain.pushOperand(displayValue) {
-            displayValue = result
-        } else {
-            displayValue = 0
+        if let value = displayValue {
+            if let result = brain.pushOperand(value) {
+                displayValue = result
+            } else {
+                displayValue = 0
+            }
         }
     }
     
-    var displayValue: Double {
+    var displayValue: Double? {
         get {
-            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+            if let text = display.text {
+                return NSNumberFormatter().numberFromString(text)?.doubleValue
+            } else {
+                return nil
+            }
         }
         set {
-            var newValue = NSNumberFormatter.localizedStringFromNumber(NSNumber(double: newValue), numberStyle: NSNumberFormatterStyle.DecimalStyle)
-            display.text = "\(newValue)"
+            if newValue != nil {
+                var newValue = NSNumberFormatter.localizedStringFromNumber(NSNumber(double: newValue!), numberStyle: NSNumberFormatterStyle.DecimalStyle)
+                display.text = "\(newValue)"
+            } else {
+                display.text = ""
+            }
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 

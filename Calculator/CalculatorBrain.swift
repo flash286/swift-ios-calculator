@@ -15,12 +15,37 @@ class CalculatorBrain {
         case UnaryOperand(description: String, Double -> Double)
         case Constant(description: String, () -> Double)
         case BinaryOperand(description: String, (Double, Double) -> Double)
-
+        case Variable(description: String, Double -> Double)
     }
     
     private var opStack = [Op]()
     
     private var knowOps = [String:Op]()
+    
+    var variableValues = [String:Double]()
+    
+    var description: String {
+        get {
+            var result = ""
+            for op in opStack {
+                switch op {
+                case .Operand(let operand):
+                    let (res, _) = evaluate([op])
+                    if res != nil {
+                        result += NSNumberFormatter.localizedStringFromNumber(NSNumber(double: res!), numberStyle: NSNumberFormatterStyle.DecimalStyle)
+                    }
+                case .UnaryOperand(let unaryName, let value):
+                    let (res, _) = evaluate([op])
+                    if res != nil {
+                        result += "\(unaryName)"
+                        result += NSNumberFormatter.localizedStringFromNumber(NSNumber(double: res!), numberStyle: NSNumberFormatterStyle.DecimalStyle)
+                    }
+                default: break
+                }
+            }
+            return ""
+        }
+    }
     
     init() {
         knowOps["×"] = Op.BinaryOperand(description: "×", *)
@@ -39,6 +64,12 @@ class CalculatorBrain {
     
     func pushOperand(operand: Double) -> Double? {
         opStack.append(Op.Operand(operand))
+        println("\(opStack)")
+        return evaluate()
+    }
+    
+    func pushOperand(operand: String) -> Double? {
+        opStack.append(Op.Variable(description: operand) { $0 } )
         println("\(opStack)")
         return evaluate()
     }
@@ -66,6 +97,11 @@ class CalculatorBrain {
                 }
             case .Constant(_, let operation):
                 return (operation(), remaingOps)
+            case .Variable(let variableName, let variable):
+                let operandEvaluation = evaluate(remaingOps)
+                if let variableValue = variableValues[variableName] {
+                    return (variable(variableValue), operandEvaluation.remaingOps)
+                }
             }
         }
         

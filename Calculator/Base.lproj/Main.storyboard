@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculator View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculatorViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -50,7 +50,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="7">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -90,7 +90,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="8">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -138,7 +138,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="9">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -176,7 +176,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="4">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -210,7 +210,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="5">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -244,7 +244,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="6">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -278,7 +278,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="1">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -312,7 +312,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="2">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -346,7 +346,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="3">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -380,7 +380,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="0">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -453,7 +453,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="÷">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -487,7 +487,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="×">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -521,7 +521,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="−">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.20000000000000001" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -532,6 +532,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
                                     <mask key="constraints">
                                         <include reference="K3X-QB-UUE"/>
                                         <include reference="dvR-QJ-Kni"/>
@@ -555,7 +556,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -589,7 +590,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="↵">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -623,7 +624,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="COS">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -657,7 +658,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="√">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -691,7 +692,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="π">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -725,7 +726,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title="SIN">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -759,7 +760,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal" title=".">
                                     <color key="titleColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -782,7 +783,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="7fS-2S-dZ2" secondAttribute="trailing" constant="80" id="0Ow-IW-HXu"/>
                             <constraint firstItem="Xea-ET-Oio" firstAttribute="leading" secondItem="USG-e1-92n" secondAttribute="trailing" constant="8" id="0vS-Io-syD"/>
